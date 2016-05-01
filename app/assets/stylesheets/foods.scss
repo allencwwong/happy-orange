@@ -1,0 +1,147 @@
+// Place all the styles related to the foods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//id snake case
+//class - case
+//data - case
+
+body{
+  
+  margin:0 auto;
+  color:#333;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+p{
+  font-size: 14px;
+}
+
+h2{
+  margin: 10px 0px;
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
+}
+
+a{
+  color:#666;
+}
+
+.center{
+  margin:0 auto;
+}
+
+.selector-icons{
+  width:100%;
+  padding:15px 5%;
+}
+
+.selector-icons a{
+  padding:0px;
+}
+
+.selector-icons i{
+  margin-left:24%;
+}
+
+.selector-icons > :first-child i{
+  float: left;
+  margin-left:0px;
+}
+.selector-icons a:last-child i{
+  float: right;
+  margin-right: 0px;
+  margin-left: 0px;
+} 
+
+// ##### Navagation #####
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    
+}
+.navbar-brand {float:none;}
+
+.header-icon .left{
+  margin-right:20px;
+}
+
+.nav-form{
+  padding-top:25px;
+}
+
+#sub_nav{
+  display: none;
+}
+
+.navbar{
+  margin-bottom: 10px;
+}
+
+
+// ##### General #####
+
+  #mainContent{
+    padding:0px 10px;
+  }
+
+  .header-title{
+    width:100%;
+  }
+
+  .header-title h2{
+    text-align: center;
+  }
+
+// ##### Filter #####
+
+#filter_panel{
+  display: none;
+  height: 100%;
+  padding:0 10px 10px 10px;
+  position: absolute;
+  background: white;
+  z-index: 1;
+  width:100%;
+}
+
+// ##### Index #####
+
+#index{
+
+
+}
+
+// ##### Show #####
+
+#show{
+  
+  
+  .sub-image{
+    list-style: none;
+    padding:0px;
+  }
+  .sub-image li{
+    float: left;
+    width: 33%;
+  }
+  .sub-image li img{
+    height: 100px;
+  }
+}
+
+
+
+
+
+
