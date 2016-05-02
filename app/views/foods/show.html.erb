@@ -1,17 +1,18 @@
 
+
 <div id="show" class="containter" data-nav="sub-nav">
   
   <nav class="navbar navbar-default" id="sub_nav">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header header-title">
-       <a href="" class="back-btn"><i class="fa fa-arrow-left fa-2x left" aria-hidden="true"></i></a><h2 class="" style="display:inline;"><%= @main_photo_name %></h2>
+       <a href="" class="back-btn"><i class="fa fa-arrow-left fa-2x left" aria-hidden="true"></i></a><h2><%= @main_photo_name %></h2>
       </div>
     </div>
   </nav>
 
 
-  <div class="row" id="mainContent">
+  <div class="row" id="main_content">
   <!-- ##### Navigation ##### -->
 
     <div class="col-lg-12">
@@ -20,8 +21,20 @@
     </div>
     <ul class="col-lg-12 sub-image">
       <% @restaurant_photos_ordered.each do |photo|  %>
+       
+       <% @food_tag_list.each do |tag| %>
+       <% end %>        
+        <!-- (":tag#{tag_count}: => #{tag.tag_name}") -->               
+        <!-- :tag1 => tag_name, :tag2 => tag_name -->
       <li><%= image_tag(photo.photo_url,:data => {:name => photo.food_name}) %></li>
       <% end %>
+    </ul>
+
+    <ul id="main_details">
+      <li>Name: <%= @current_restaurant.name %></li>
+      <li>Address: <%= @current_restaurant.address %></li>
+      <li><%= @current_restaurant.city %> <%= @current_restaurant.state %> <%= @current_restaurant.zip %></li>
+      <li>Phone: <%= @current_restaurant.phone %> </li>
     </ul>
 
   </div>

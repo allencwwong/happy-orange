@@ -35,6 +35,10 @@ a{
   color:#666;
 }
 
+ul{
+  list-style: none;
+}
+
 .center{
   margin:0 auto;
 }
@@ -91,7 +95,7 @@ a{
 
 // ##### General #####
 
-  #mainContent{
+  #main_content{
     padding:0px 10px;
   }
 
@@ -101,6 +105,7 @@ a{
 
   .header-title h2{
     text-align: center;
+    display: inline;
   }
 
 // ##### Filter #####
@@ -130,13 +135,20 @@ a{
   .sub-image{
     list-style: none;
     padding:0px;
+    
   }
   .sub-image li{
     float: left;
     width: 33%;
+    margin:10px 0;
   }
   .sub-image li img{
     height: 100px;
+  }
+
+  #main_details{
+    margin:10px 0px;
+    clear:both;
   }
 }
 
