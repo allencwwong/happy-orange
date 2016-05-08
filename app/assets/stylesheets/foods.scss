@@ -93,6 +93,7 @@ ul{
 }
 
 
+
 // ##### General #####
 
   #main_content{
@@ -101,9 +102,15 @@ ul{
 
   .header-title{
     width:100%;
+    padding-top:0px;
+    padding-bottom:0px;
+  }
+  
+  .header-sub-title{
+    margin-top: 140px;
   }
 
-  .header-title h2{
+  .header-sub-title h2{
     text-align: center;
     display: inline;
   }
@@ -130,7 +137,26 @@ ul{
 // ##### Show #####
 
 #show{
+
+  #main_image_section{
+    position:relative;
+    text-transform: capitalize;
+  }
+
+  .label-cuisine{
+    position:absolute;
+    top:10px;
+    right:20px;
+    z-index: 1;
+  }
   
+  .tags{
+    padding:0px;
+  }
+
+  .tags li{
+    margin:0 0 0 5px;
+  }
   
   .sub-image{
     list-style: none;
@@ -150,7 +176,12 @@ ul{
     margin:10px 0px;
     clear:both;
   }
+
 }
+//##### Liked List #####
+#liked{
+  margin-top: 140px;
+}  
 
 
 

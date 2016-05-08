@@ -1,0 +1,26 @@
+<div id="liked" class="contatiner">
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table">
+        <tr>
+          <th>Img</th>
+          <th>Item</th>
+          <th>Store</th>
+          <th>Price</th>
+          <th>Dist</th>
+        </tr>  
+      <% @liked_list.each do |item|%>
+        <% if item.status == "like" %>
+          <tr>
+            <td><%= image_tag(item.food_photo.photo_url) %></td>
+            <td><%= item.food_photo.food_name %></td>
+            <td><%= item.food_photo.store.name %></td>
+            <td><%= item.food_photo.price %></td>
+            <td><%= item.food_photo.store.address %></td>
+          </tr>
+          <% end %>
+      <% end %>
+      </table>
+    </div>
+  </div>
+</div>
