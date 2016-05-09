@@ -147,7 +147,9 @@ ready = function(){
   $show_page.find(".main-image").attr("src",$show_page.find(".active img").attr("src"));
 
 
-
+  $("#liked table tr").on('click',function(){
+    alert("go to go page");
+  });
 
 //   // empty out tag for no tag
 //   if(selected_img.data("show-tag") === false){
