@@ -4,8 +4,8 @@ class FoodsController < ApplicationController
 
   def index
     #hide all liked , passed , blocked food items
-
-    @disaply = true
+    puts current_user
+    @display = true
     @selected_restaurant = Store.find(99)
     @selected_food_item_id = 99
 
@@ -72,6 +72,14 @@ class FoodsController < ApplicationController
     @display = false
     user_id = current_user.id
     @liked_list = User.find(user_id).food_photo_statuses 
+  end
+
+  def destroy_liked_item
+    status_id = params[:status_id]
+    FoodPhotoStatus.find(status_id).destroy
+    user_id = current_user.id
+    @liked_list = User.find(user_id).food_photo_statuses    
+    render :liked_list
   end
 
   # private
