@@ -1,6 +1,4 @@
-User.create!([
-  {email: "allencwwong@gmail.com", encrypted_password: "$2a$10$6vWDH25DFbo74ozIAat8i.cL4CpuOU5JFszCQWfgJRWCFufaSOZfa", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 6, current_sign_in_at: "2016-05-08 07:54:48", last_sign_in_at: "2016-05-07 07:44:30", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
-])
+
 FoodPhoto.create!([
   {store_id: 1, photo_url: "https://s3.amazonaws.com/static.fitocracy.com/site_media/images/FRED-Hero.png", price: 99, food_name: "Hero", cuisine: "other", short_desc: "robo hero\t"},
   {store_id: 1, photo_url: "https://s3.amazonaws.com/static.fitocracy.com/site_media/images/FRED-AboutUs.png", price: 12, food_name: "robot", cuisine: "chinese\t\t", short_desc: "robo cop"},
