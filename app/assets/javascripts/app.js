@@ -175,20 +175,42 @@ ready = function(){
   });  
 
 
-// like and pass 
-  // var selection;
-  // function my_selection(user_id,status){
-  //   selection = {
-  //     id: 
-  //     user_id: user_id,
-  //     food_photo_id: photo_id,
-  //     status: status     
-  //   }
-  // }
+// Go page 
 
+var geocoder; //To use later
+var map; //Your map
+function initialize() {
 
+  geocoder = new google.maps.Geocoder();
+  //Default setup
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var myOptions = {
+    zoom: 8,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  map = new google.maps.Map(document.getElementById("map"), myOptions);
+  
+}
 
-// end
+//Call this wherever needed to actually handle the display
+function codeAddress(location) {
+    var lat = '';
+    var lng = '';
+    var address = location;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+         lat = results[0].geometry.location.lat();
+         lng = results[0].geometry.location.lng();
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+  
+    alert('Latitude: ' + lat + ' Logitude: ' + lng);
+  }
+
+  initialize();
 
 };
 

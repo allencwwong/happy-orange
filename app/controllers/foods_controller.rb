@@ -82,6 +82,8 @@ class FoodsController < ApplicationController
     render :liked_list
   end
 
+  def go
+  end
   # private
 
   # def selected_option_params
