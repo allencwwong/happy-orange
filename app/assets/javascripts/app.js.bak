@@ -148,7 +148,7 @@ ready = function(){
 
 
   $("#liked table tr").on('click',function(){
-    alert("go to go page");
+     alert("go to go page");
   });
 
 //   // empty out tag for no tag

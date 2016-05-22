@@ -24,7 +24,6 @@ ready = function(){
 
   // go page btn
   $("#liked table tr").on('click',function(){
-    alert("go to go page");
   });
 
 
