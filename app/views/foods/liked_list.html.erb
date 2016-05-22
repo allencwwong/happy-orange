@@ -13,7 +13,7 @@
       <% @liked_list.each do |item|%>
         <% if item.status == "like" %>
           <tr class="item">
-          
+            <td><%= image_tag(item.food_photo.photo_url) %></td>
             <td><%= item.food_photo.food_name %></td>
             <td><%= item.food_photo.store.name %></td>
             <td><%= item.food_photo.price %></td>
@@ -21,6 +21,8 @@
             <td><%= link_to raw('<i class="fa fa-times-circle fa-1x" aria-hidden="true"></i>'), {action: 'destroy_liked_item' ,controller: 'foods', status_id: item.id}, method: :delete %></td>
             <!-- <td><i class="fa fa-times-circle fa-1x" aria-hidden="true"></i></td> -->
           </tr>
+          <% else %>
+          <tr><td>No liked item yet...</td></tr>
           <% end %>
       <% end %>
       </table>
