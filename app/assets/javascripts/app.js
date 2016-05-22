@@ -45,6 +45,9 @@ ready = function(){
 
 
 // Go page 
+$("#go").on('click',function(){
+  alert(selectedAddress);
+});
 
 var geocoder; // To use later
 var map; //Your map
@@ -63,21 +66,21 @@ function initialize() {
 }
 
 //Call this wherever needed to actually handle the display
-// function codeAddress(location) {
-//     var lat = '';
-//     var lng = '';
-//     var address = location;
-//     geocoder.geocode( { 'address': address}, function(results, status) {
-//       if (status == google.maps.GeocoderStatus.OK) {
-//          lat = results[0].geometry.location.lat();
-//          lng = results[0].geometry.location.lng();
-//         });
-//       } else {
-//         alert("Geocode was not successful for the following reason: " + status);
-//       }
+function addressCorrdinate(location) {
+    var lat = '';
+    var lng = '';
+    var address = location;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+         lat = results[0].geometry.location.lat();
+         lng = results[0].geometry.location.lng();
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
   
-//     alert('Latitude: ' + lat + ' Logitude: ' + lng);
-//   }
+    alert('Latitude: ' + lat + ' Logitude: ' + lng);
+  }
 
   initialize();
 
