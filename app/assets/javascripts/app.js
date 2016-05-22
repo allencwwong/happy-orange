@@ -46,6 +46,7 @@ ready = function(){
 
 // Go page 
 $("#go").on('click',function(){
+  alert("test");
   alert(selectedAddress);
 });
 
