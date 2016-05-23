@@ -78,11 +78,13 @@
         <!-- <a href="javascript:void(0)" id="pass" class="col-lg-4" data-user="<%= current_user.id%>" data-status="pass"><i class="fa fa-times-circle fa-4x" aria-hidden="true"></i></a> -->
 
 
-        <%= link_to raw('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>'), {controller: 'foods',action: "selected_option", selected: "pass", store_id: @selected_restaurant.id, food_id: @selected_food_item_id}, method: :post %>
+        <%= link_to raw('<i class="fa fa-times-circle fa-4x" aria-hidden="true"></i>'), {controller: 'foods',action: "selected_option", selected: "pass", store_id: @selected_restaurant.id, food_id: @selected_food_item_id}, id:"pass",method: :post %>
 
-        <a href="javascript:void(0)" id="go" class="col-lg-4"><i class="fa fa-car fa-4x" aria-hidden="true"></i></a>
+        <%= link_to raw('<i class="fa fa-car fa-4x" aria-hidden="true"></i>'), {controller:'foods',action: "go", address: @selected_restaurant.address , zip: @selected_restaurant.zip}, id:"go" %>    
 
-        <%= link_to raw('<i class="fa fa-heart fa-4x" aria-hidden="true"></i>'), {controller: 'foods', action: "selected_option", selected: "like", store_id: @selected_restaurant.id, food_id: @selected_food_item_id}, method: :post %>
+  <!--       <a href="javascript:void(0)" id="go" class="col-lg-4"><i class="fa fa-car fa-4x" aria-hidden="true" data-address="<%= @selected_restaurant.address %>" data-zip="<%= @selected_restaurant.zip %>"></i></a> -->
+
+        <%= link_to raw('<i class="fa fa-heart fa-4x" aria-hidden="true"></i>'), {controller: 'foods', action: "selected_option", selected: "like", store_id: @selected_restaurant.id, food_id: @selected_food_item_id}, id: "like",method: :post %>
         
         <!-- <a href="javascript:void(0)" id="like" class="col-lg-4" data-user="<%= current_user.id%>" data-status="like"><i class="fa fa-heart fa-4x" aria-hidden="true"></i></a> -->
       </div>

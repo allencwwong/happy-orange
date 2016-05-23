@@ -4,7 +4,6 @@ class FoodsController < ApplicationController
 
   def index
     #hide all liked , passed , blocked food items
-    puts current_user
     @display = true
     @selected_restaurant = Store.find(99)
     @selected_food_item_id = 99
@@ -83,6 +82,9 @@ class FoodsController < ApplicationController
   end
 
   def go
+    selected_address = params[:address]
+    selected_zip = params[:zip]
+    @full_address = selected_address + " " + selected_zip
   end
   # private
 

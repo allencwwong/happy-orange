@@ -45,47 +45,43 @@ ready = function(){
 
 
 // Go page 
-$("#go").on('click',function(){
-  alert("test");
-  alert(selectedAddress);
-});
 
-var geocoder; // To use later
+
+if (top.location.pathname === '/go')
+{
+  initialize();
+}
+
 var map; //Your map
 function initialize() {
-
-  geocoder = new google.maps.Geocoder();
   //Default setup
-  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var geocoder = new google.maps.Geocoder();
   var myOptions = {
     zoom: 8,
-    center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   map = new google.maps.Map(document.getElementById("map"), myOptions);
-  
+  geocodeAddress(geocoder, map);
 }
 
-//Call this wherever needed to actually handle the display
-// function addressCorrdinate(location) {
-//     var lat = '';
-//     var lng = '';
-//     var address = location;
-//     geocoder.geocode( { 'address': address}, function(results, status) {
-//       if (status == google.maps.GeocoderStatus.OK) {
-//          lat = results[0].geometry.location.lat();
-//          lng = results[0].geometry.location.lng();
-//         });
-//       } else {
-//         alert("Geocode was not successful for the following reason: " + status);
-//       }
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('address').innerText;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      resultsMap.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
   
-//     alert('Latitude: ' + lat + ' Logitude: ' + lng);
-//   }
 
-  initialize();
-
-};
+}; // end
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
