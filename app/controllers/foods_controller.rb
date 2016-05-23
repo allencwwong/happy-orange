@@ -84,7 +84,7 @@ class FoodsController < ApplicationController
   def go
     selected_address = params[:address]
     selected_zip = params[:zip]
-    @full_address = selected_address + " " + selected_zip
+    @full_address = "#{selected_address} #{selected_zip}"
   end
   # private
 
